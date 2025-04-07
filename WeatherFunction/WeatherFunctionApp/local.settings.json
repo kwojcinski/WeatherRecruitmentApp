@@ -3,6 +3,6 @@
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "WeatherApiKey": "af8e78eb9400324a3610a8fadf6e1eea"
+    "WeatherApiKey": "API_KEY"
   }
 }
