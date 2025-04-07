@@ -12,7 +12,6 @@ namespace Tests
         [Fact]
         public async Task FetchWeatherAsync_ReturnsWeatherResponse_WhenSuccessful()
         {
-            // Arrange
             var fakeJson = "{\"weather\":\"sunny\"}";
             var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
             handlerMock

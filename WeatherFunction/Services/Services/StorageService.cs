@@ -3,11 +3,6 @@ using Azure.Data.Tables;
 using Azure.Storage.Blobs;
 using Core.Models;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services
 {
@@ -18,7 +13,6 @@ namespace Services.Services
 
         public StorageService(IConfiguration configuration)
         {
-            // Read connection strings from configuration
             var storageConnectionString = configuration["AzureWebJobsStorage"];
             var tableName = "WeatherLogs";
             var blobContainerName = "weatherpayloads";
@@ -38,8 +32,6 @@ namespace Services.Services
 
         public async Task<IEnumerable<WeatherLog>> QueryLogsAsync(DateTime from, DateTime to)
         {
-            // Query logs by TimestampUtc.
-            // Note: Table storage queries on non-key properties require filtering on a string; adjust accordingly.
             string filter = TableClient.CreateQueryFilter<WeatherLog>(log =>
                 log.TimestampUtc >= from && log.TimestampUtc <= to);
 

@@ -22,7 +22,6 @@ namespace WeatherFunctionApp.Functions
         {
             var logger = context.GetLogger("GetLogs");
 
-            // Retrieve query parameters
             var query = System.Web.HttpUtility.ParseQueryString(req.Url.Query);
             string fromStr = query["from"];
             string toStr = query["to"];

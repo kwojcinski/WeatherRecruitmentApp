@@ -2,7 +2,6 @@ using Abstraction.Interfaces;
 using Core.Models;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics.Metrics;
 
 namespace WeatherFunctionApp.Functions
 {
