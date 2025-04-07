@@ -34,7 +34,7 @@ namespace Services.Services
                     {
                         // Resolve the scoped service from the scope.
                         var weatherService = scope.ServiceProvider.GetRequiredService<IWeatherService>();
-                        await weatherService.AddWeatherDataAsync();
+                        await weatherService.UpdateWeatherDataAsync();
                     }
 
                     _logger.LogInformation("Weather data updated at {Time}", DateTime.UtcNow);
