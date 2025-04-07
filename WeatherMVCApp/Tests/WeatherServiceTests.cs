@@ -1,5 +1,4 @@
-﻿using Abstraction.Interfaces.Services;
-using Core.Models;
+﻿using Core.Models;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Moq.Protected;

@@ -2,11 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Services
 {
@@ -29,10 +24,8 @@ namespace Services.Services
             {
                 try
                 {
-                    // Create a new scope for each update operation.
                     using (var scope = _scopeFactory.CreateScope())
                     {
-                        // Resolve the scoped service from the scope.
                         var weatherService = scope.ServiceProvider.GetRequiredService<IWeatherService>();
                         await weatherService.UpdateWeatherDataAsync();
                     }

@@ -1,5 +1,4 @@
 ﻿using Abstraction.Interfaces.Services;
-using Core.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WeatherMVCApp.Controllers
