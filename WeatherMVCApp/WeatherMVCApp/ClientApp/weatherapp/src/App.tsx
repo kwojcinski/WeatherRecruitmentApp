@@ -1,4 +1,5 @@
-import WeatherGraph from './components/WeatherGraph';
+import './App.css'
+import WeatherGraph from './components/WeatherGraph/WeatherGraph';
 
 function App() {
   return (

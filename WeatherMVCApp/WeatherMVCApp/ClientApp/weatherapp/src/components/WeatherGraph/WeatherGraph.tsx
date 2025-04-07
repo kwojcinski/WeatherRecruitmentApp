@@ -9,11 +9,10 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import './WeatherGraph.css';
 
-// Register the required Chart.js components.
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-// Define the interface for a weather record returned by the API.
 interface WeatherRecord {
   id: number;
   country: string;
@@ -24,7 +23,6 @@ interface WeatherRecord {
   lastUpdate: string;
 }
 
-// Define an interface for the computed statistics per city.
 interface CityTempStat {
   city: string;
   country: string;
@@ -95,8 +93,7 @@ const WeatherGraph: React.FC = () => {
     ],
   };
 
-  // Chart options
-  const options = {
+  const chartOptions = {
     responsive: true,
     plugins: {
       legend: {
@@ -110,8 +107,8 @@ const WeatherGraph: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-      <Bar data={data} options={options} />
+    <div className="bar-div">
+      <Bar data={data} options={chartOptions} />
     </div>
   );
 };
