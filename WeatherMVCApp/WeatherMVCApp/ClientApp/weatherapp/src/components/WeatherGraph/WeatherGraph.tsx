@@ -39,17 +39,12 @@ const WeatherGraph: React.FC = () => {
     )
       .then((res) => res.json())
       .then((data: WeatherRecord[]) => {
-        const computedStats: CityTempStat[] = [];
-        data.forEach((record) => {
-          const computedStat : CityTempStat = {
-            city: record.city,
-            country: record.country,
-            min: record.minTemperature,
-            max: record.maxTemperature
-          }
-
-          computedStats.push(computedStat);
-        });
+        const computedStats: CityTempStat[] = data.map((record) => ({
+          city: record.city,
+          country: record.country,
+          min: record.minTemperature,
+          max: record.maxTemperature
+        }));
       
         //WASN'T SURE IF I NEED TO SHOW MIN/MAX FROM THE DATA, OR CALCULATE IT SO BOTH HERE
         
@@ -70,7 +65,7 @@ const WeatherGraph: React.FC = () => {
         //   const [country, city] = key.split('-');
         //   return { city, country, min, max };
         // });
-
+        
         setStats(computedStats);
       })
       .catch((err) => console.error('Error fetching weather logs:', err));
